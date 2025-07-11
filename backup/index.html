@@ -1,0 +1,133 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Playlist YouTube</title>
+  <style>
+    body {
+      font-family: Arial;
+      max-width: 800px;
+      margin: auto;
+      padding: 20px;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    img.thumb {
+      width: 120px;
+      margin-right: 10px;
+      border-radius: 8px;
+    }
+    #player-container {
+      position: relative;
+      width: 640px;
+      height: 360px;
+      margin-top: 20px;
+    }
+    #player-cover {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.95);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 24px;
+      cursor: pointer;
+      z-index: 2;
+    }
+    #player {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+  </style>
+  <script src="https://www.youtube.com/iframe_api"></script>
+</head>
+<body>
+
+  <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 20px;">
+    <div style="width: 40px; height: 40px; background-color: red; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+      <div style="width: 0; height: 0; border-left: 12px solid white; border-top: 8px solid transparent; border-bottom: 8px solid transparent;"></div>
+    </div>
+    <span style="font-size: 24px; font-weight: bold;">Watchlist</span>
+  </div>
+
+  <div style="display: flex; gap: 20px; align-items: flex-start;">
+    <div style="flex: 1;">
+      <div id="player-container">
+        <div id="player-cover">
+          <div style="text-align: center;">
+            <div id="video-info">0 vídeos na lista</div>
+            <div id="total-time" style="font-size: 16px; margin-bottom: 10px;">Duração total: 0:00</div>
+            <button id="play-button" style="
+              background-color: red;
+              border: none;
+              border-radius: 12px;
+              padding: 12px 28px;
+              color: white;
+              font-size: 18px;
+              font-weight: bold;
+              cursor: pointer;
+              box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+              transition: background-color 0.2s ease;
+            ">▶ Play</button>
+          </div>
+        </div>
+        <div id="player"></div>
+      </div>
+
+      <div style="margin-top: 20px;">
+        <h3 style="margin: 0 0 15px 0; color: #333; font-size: 18px;">📋 Fila</h3>
+        <div id="playlist" style="display: flex; flex-wrap: wrap; gap: 10px;"></div>
+      </div>
+    </div>
+
+    <div style="width: 300px; background: #f8f9fa; border-radius: 12px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+      <h3 style="margin-top: 0; color: #333;">📚 Biblioteca</h3>
+      
+      <div style="margin-bottom: 20px;">
+        <input id="library-url" type="text" placeholder="URL do vídeo" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 6px; margin-bottom: 8px;" />
+        <input id="library-tags" type="text" placeholder="Tags (ex: música, tutorial, entretenimento)" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 6px; margin-bottom: 8px;" />
+        <button onclick="adicionarABiblioteca()" style="
+          width: 100%;
+          padding: 10px;
+          background-color: #007bff;
+          color: white;
+          border: none;
+          border-radius: 6px;
+          cursor: pointer;
+          font-weight: bold;
+        ">Adicionar à Biblioteca</button>
+      </div>
+
+      <div style="margin-bottom: 15px;">
+        <select id="filter-tags" onchange="filtrarPorTag()" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 6px;">
+          <option value="">Todas as categorias</option>
+        </select>
+      </div>
+
+      <div id="biblioteca" style="max-height: 400px; overflow-y: auto;"></div>
+    </div>
+  </div>
+  
+
+
+
+
+
+
+
+
+  <script src="script.js"></script>
+</body>
+</html>
