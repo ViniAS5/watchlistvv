@@ -2,7 +2,7 @@
 const API_KEY = "AIzaSyA9dJltKZbDF-pGPtMPDNHEtCKq8K2-zjU";
 
 // Configurações da API
-const API_BASE_URL = 'http://localhost:3000/api';
+const API_BASE_URL = 'ttps://watchlistvv.onrender.com/api';
 
 // Estado da aplicação
 let currentUser = null;
