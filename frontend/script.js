@@ -2,7 +2,7 @@
 const API_KEY = "AIzaSyA9dJltKZbDF-pGPtMPDNHEtCKq8K2-zjU";
 
 // Configurações da API
-const API_BASE_URL = 'http://localhost:3000/api';
+const API_BASE_URL = 'https://watchlist-jtoo.onrender.com/api';
 
 // Estado da aplicação
 let currentUser = null;
@@ -188,7 +188,7 @@ async function loadBiblioteca() {
 
 function onYouTubeIframeAPIReady() {
   player = new YT.Player('player', {
-    height: '100%',
+     height: '100%',
     width: '100%',
     videoId: '',
     events: {
