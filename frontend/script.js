@@ -2,7 +2,7 @@
 const API_KEY = "AIzaSyA9dJltKZbDF-pGPtMPDNHEtCKq8K2-zjU";
 
 // Configurações da API
-const API_BASE_URL = 'https://watchlist-jtoo.onrender.com/api';
+const API_BASE_URL = 'https://listo.watch/api';
 
 // Estado da aplicação
 let currentUser = null;

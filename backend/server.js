@@ -21,7 +21,7 @@ const limiter = rateLimit({
 // Middlewares
 app.use(cors({
   origin: process.env.NODE_ENV === 'production' 
-    ? ['https://seu-dominio.com', 'https://www.seu-dominio.com'] 
+    ? ['https://listo.watch', 'https://www.listo.watch'] 
     : true,
   credentials: true
 }));
